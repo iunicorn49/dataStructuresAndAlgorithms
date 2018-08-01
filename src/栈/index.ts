@@ -1,10 +1,12 @@
 /**
- * 栈是一种遵从后进先出 (LIFO) 原则的有序合集. 新添加的或待删除的元素都保存在栈的同一端, 称作栈顶, 另一端就叫栈底部. 在栈里, 新元素都靠近栈顶, 旧元素都接近栈底部.
+ * 栈是一种遵从后进先出 (LIFO) 原则的有序合集. 
+ * 新添加的或待删除的元素都保存在栈的同一端, 称作栈顶, 另一端就叫栈底部. 
+ * 在栈里, 新元素都靠近栈顶, 旧元素都接近栈底部.
  */
-class Stack {
+export class Stack {
 	private name:string
 	private items:any[]
-	constructor(name:string, items:any[] = []) {
+	constructor(name:string = '栈', items:any[] = []) {
 		this.name = name
 		this.items = items
 	}
@@ -19,8 +21,7 @@ class Stack {
 		return peek
 	}
 	isEmpty():boolean { // 判断栈内是否为空
-		let hasLength:boolean = this.items.length > 0 ? false : true
-		return hasLength
+		return this.items.length === 0
 	}
 	clear():void { // 移除栈里的所有元素
 		this.items = []
@@ -64,4 +65,4 @@ function decimalismToOthers(num: number, base:number):string {
 	return result
 }
 
-console.log(decimalismToOthers(10, 16))
+// console.log(decimalismToOthers(10, 16))
