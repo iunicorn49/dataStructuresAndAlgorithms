@@ -3,11 +3,9 @@
  * 新添加的或待删除的元素都保存在栈的同一端, 称作栈顶, 另一端就叫栈底部. 
  * 在栈里, 新元素都靠近栈顶, 旧元素都接近栈底部.
  */
-export class Stack {
-	private name:string
+export default class Stack {
 	private items:any[]
-	constructor(name:string = '栈', items:any[] = []) {
-		this.name = name
+	constructor(items:any[] = []) {
 		this.items = items
 	}
 	push(el:any):void { // 添加一个新的元素到栈顶
@@ -31,7 +29,7 @@ export class Stack {
 		return size
 	}
 	print():void {
-		console.log(`${this.name}:`, this.items)
+		console.log(this)
 	}
 }
 
@@ -43,7 +41,7 @@ export class Stack {
 function decimalismToOthers(num: number, base:number):string {
 	const digits = '0123456789ABCDEF'
 	let n = num
-	let S = new Stack('S')
+	let S = new Stack()
 	while(n > 0) {
 		let r = Math.floor(n % base)
 		
